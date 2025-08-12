@@ -32,21 +32,14 @@ jobs:
       - name: Restore API
         run: dotnet restore ${{ env.API_PROJECT }}
 
+      - name: Build API
+        run: dotnet build ${{ env.API_PROJECT }} --configuration ${{ matrix.configuration }} --no-restore
+
       - name: Restore Tests
         run: dotnet restore ${{ env.TEST_PROJECT }}
 
-      - name: Build API
-        run: dotnet build ${{ env.API_PROJECT }} \
-              --configuration ${{ matrix.configuration }} \
-              --no-restore
-
       - name: Build Tests
-        run: dotnet build ${{ env.TEST_PROJECT }} \
-              --configuration ${{ matrix.configuration }} \
-              --no-restore
+        run: dotnet build ${{ env.TEST_PROJECT }} --configuration ${{ matrix.configuration }} --no-restore
 
       - name: Run Tests
-        run: dotnet test ${{ env.TEST_PROJECT }} \
-              --configuration ${{ matrix.configuration }} \
-              --no-build \
-              --verbosity normal
+        run: dotnet test ${{ env.TEST_PROJECT }} --configuration ${{ matrix.configuration }} --no-build
