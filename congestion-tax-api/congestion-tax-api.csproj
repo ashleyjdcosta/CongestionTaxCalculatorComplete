@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\netcore\congestion-tax-calculator-net-core.csproj" />
+    <ProjectReference Include="..\congestion-tax-calculator-net-core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
