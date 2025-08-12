@@ -13,11 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\congestion-tax-unit-tests\netcore\congestion-tax-calculator-net-core.csproj" />
+    <!-- go up once to the repo root, then into your core project folder -->
+    <ProjectReference Include="..\congestion-tax-calculator-net-core\congestion-tax-calculator-net-core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+
 
 
 
